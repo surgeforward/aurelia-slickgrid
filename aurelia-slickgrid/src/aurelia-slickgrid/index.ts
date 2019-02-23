@@ -16,8 +16,8 @@ export * from './editors/index';
 export * from './filter-conditions/index';
 export * from './filters/index';
 
-// export the Backend Services
-export { GraphqlService, GridOdataService } from './services/index';
+// export some of the Services that can be used directly by the user
+export { AureliaUtilService, GraphqlService, GridOdataService } from './services/index';
 
 export function configure(aurelia: any, callback: any) {
   aurelia.globalResources(PLATFORM.moduleName('./aurelia-slickgrid'));

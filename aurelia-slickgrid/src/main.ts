@@ -6,6 +6,7 @@ import 'font-awesome/css/font-awesome.css';
 import 'flatpickr/dist/flatpickr.min.css';
 import '../assets/lib/multiple-select/multiple-select.css';
 import '../assets/lib/multiple-select/multiple-select.js';
+import 'bootstrap-select/dist/css/bootstrap-select.min.css';
 import './styles.css';
 import './slickgrid.scss';
 import { PLATFORM } from 'aurelia-pal';
@@ -34,6 +35,8 @@ export function configure(aurelia: Aurelia) {
     // change any of the default global options
     config.options.gridMenu.iconCssClass = 'fa fa-bars';
   });
+
+  aurelia.use.plugin(PLATFORM.moduleName('aurelia-bootstrap-select'));
 
   // aurelia i18n to handle multiple locales
   aurelia.use.plugin(PLATFORM.moduleName('aurelia-i18n'), (instance) => {

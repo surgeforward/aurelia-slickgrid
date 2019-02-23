@@ -323,7 +323,7 @@ export class RowDetailViewExtension implements Extension {
   private renderPreloadView() {
     const containerElements = document.getElementsByClassName(`${PRELOAD_CONTAINER_PREFIX}`);
     if (containerElements && containerElements.length) {
-      this.aureliaUtilService.appendAureliaViewToDom(this._preloadView, containerElements[0]);
+      this.aureliaUtilService.createAureliaViewAppendToDom(this._preloadView, containerElements[0]);
     }
   }
 
@@ -331,7 +331,7 @@ export class RowDetailViewExtension implements Extension {
   private renderViewModel(item: any) {
     const containerElements = document.getElementsByClassName(`${ROW_DETAIL_CONTAINER_PREFIX}${item.id}`);
     if (containerElements && containerElements.length) {
-      const aureliaComp = this.aureliaUtilService.appendAureliaViewModelToDom(this._viewModel, item, containerElements[0]);
+      const aureliaComp = this.aureliaUtilService.createAureliaViewModelAppendToDom(this._viewModel, item, containerElements[0]);
 
       const slotObj = this._slots.find((obj) => obj.id === item.id);
 
