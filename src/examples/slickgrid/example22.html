@@ -1,0 +1,13 @@
+<template>
+  <h2>${title}</h2>
+  <div class="subtitle"
+       innerhtml.bind="subTitle"></div>
+
+  <aurelia-slickgrid grid-id="grid1"
+                     column-definitions.bind="columnDefinitions"
+                     grid-options.bind="gridOptions"
+                     dataset.bind="dataset"
+                     sg-on-click.delegate="onCellClicked($event.detail.eventData, $event.detail.args)"
+                     asg-on-aurelia-grid-created.delegate="aureliaGridReady($event.detail)">
+  </aurelia-slickgrid>
+</template>

@@ -240,6 +240,20 @@ export class FilterService {
 
   /** Local Grid Filter search */
   customLocalFilter(dataView: any, item: any, args: any) {
+    if (this._gridOptions.enableTreeView) {
+      const data = dataView.getItems();
+      if (item.__parent !== null) {
+        let parent = data[item.__parent];
+        while (parent) {
+          if (parent.__collapsed) {
+            return false;
+          }
+          parent = data[parent.__parent];
+        }
+      }
+      // return true;
+    }
+
     for (const columnId of Object.keys(args.columnFilters)) {
       const columnFilter: ColumnFilter = args.columnFilters[columnId];
       const columnIndex = args.grid.getColumnIndex(columnId);
@@ -247,9 +261,8 @@ export class FilterService {
       if (!columnDef) {
         return false;
       }
-
       // Row Detail View plugin, if the row is padding we just get the value we're filtering on from it's parent
-      if (this._gridOptions.enableRowDetailView) {
+      if (this._gridOptions.enableRowDetailView || this._gridOptions.enableTreeView) {
         const metadataPrefix = this._gridOptions.rowDetailView && this._gridOptions.rowDetailView.keyPrefix || '__';
         if (item[`${metadataPrefix}isPadding`] && item[`${metadataPrefix}parent`]) {
           item = item[`${metadataPrefix}parent`];
