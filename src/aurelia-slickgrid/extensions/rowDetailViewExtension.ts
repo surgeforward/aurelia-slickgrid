@@ -210,7 +210,6 @@ export class RowDetailViewExtension implements Extension {
         expandedView.viewSlot.remove(expandedView.view);
         expandedView.view.unbind();
         container[0].innerHTML = '';
-        console.log('disposed', container[0])
         return expandedView;
       }
     }

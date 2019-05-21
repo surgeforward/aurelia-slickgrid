@@ -180,8 +180,11 @@
         width: $icon-group-width;
         height: $icon-group-height;
         margin-right: $icon-group-margin-right;
-        cursor: pointer;
 
+        &.expanded,
+        &.collapsed {
+          cursor: pointer;
+        }
         &.expanded:before {
           content: $icon-group-expanded;
           font-family: $icon-font-family;
