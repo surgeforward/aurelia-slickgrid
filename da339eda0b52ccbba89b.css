@@ -11000,16 +11000,28 @@ input.editor-checkbox {
 /* Row Move Manager Plugin */
 /* selector plugin */
 /* Viewport */
-@-webkit-keyframes highlight-fade {
+@-webkit-keyframes highlight-start {
   to {
     background: #c8ddea; }
   from {
     background: none; } }
 
-@keyframes highlight-fade {
+@keyframes highlight-start {
   to {
     background: #c8ddea; }
   from {
+    background: none; } }
+
+@-webkit-keyframes highlight-end {
+  from {
+    background: 0.3s ease 1; }
+  to {
+    background: none; } }
+
+@keyframes highlight-end {
+  from {
+    background: 0.3s ease 1; }
+  to {
     background: none; } }
 
 .slickgrid-container {
@@ -11038,24 +11050,28 @@ input.editor-checkbox {
       padding: 5px 7.5834px; }
     .slickgrid-container .grid-canvas .slick-row.highlight {
       background-color: #c8ddea;
-      -webkit-animation: highlight-fade 1.5s ease 1;
-              animation: highlight-fade 1.5s ease 1; }
-      .slickgrid-container .grid-canvas .slick-row.highlight .slick-cell.selected {
-        background-color: inherit !important; }
+      -webkit-animation: highlight-start 1.5s ease 1;
+              animation: highlight-start 1.5s ease 1; }
       .slickgrid-container .grid-canvas .slick-row.highlight .slick-cell.copied {
         background: rgba(0, 0, 255, 0.2);
         -webkit-transition: 0.5s background;
         transition: 0.5s background; }
       .slickgrid-container .grid-canvas .slick-row.highlight.odd {
         background-color: #c8ddea;
-        -webkit-animation: highlight-fade 1.5s ease 1;
-                animation: highlight-fade 1.5s ease 1; }
-      .slickgrid-container .grid-canvas .slick-row.highlight.odd .slick-cell.selected {
-        background-color: inherit !important; }
+        -webkit-animation: highlight-start 1.5s ease 1;
+                animation: highlight-start 1.5s ease 1; }
       .slickgrid-container .grid-canvas .slick-row.highlight.odd .slick-cell.copied {
         background: rgba(0, 0, 255, 0.2);
         -webkit-transition: 0.5s background;
         transition: 0.5s background; }
+    .slickgrid-container .grid-canvas .slick-row.highlight-end {
+      background-color: #c8ddea;
+      -webkit-animation: highlight-end 1.5s ease 1;
+              animation: highlight-end 1.5s ease 1; }
+      .slickgrid-container .grid-canvas .slick-row.highlight-end.odd {
+        background-color: #c8ddea;
+        -webkit-animation: highlight-end 1.5s ease 1;
+                animation: highlight-end 1.5s ease 1; }
     .slickgrid-container .grid-canvas .slick-row.highlighter {
       background: orange !important;
       -webkit-transition-property: background;
@@ -11343,4 +11359,4 @@ input.editor-checkbox {
   padding: 0;
   width: 1px; }
 
-/*# sourceMappingURL=app.f0c7f343478ccfcd35f6.bundle.map*/
+/*# sourceMappingURL=app.fe3f7295d7fc4af98f30.bundle.map*/
