@@ -80,7 +80,7 @@ export class AutoCompleteEditor implements Editor {
 
   /** Get the Validator function, can be passed in Editor property or Column Definition */
   get validator(): EditorValidator | undefined {
-    return this.columnEditor.validator || this.columnDef.validator;
+    return this.columnEditor.validator || this.columnDef!.validator;
   }
 
   /** Get the Editor DOM Element */
@@ -151,7 +151,7 @@ export class AutoCompleteEditor implements Editor {
     if (this.customStructure && this._currentValue && this._currentValue.hasOwnProperty(this.labelName)) {
       return this._currentValue[this.labelName];
     } else if (this._currentValue && this._currentValue.label) {
-      if (this.columnDef.type === FieldType.object) {
+      if (this.columnDef!.type === FieldType.object) {
         return {
           [this.labelName]: this._currentValue.label,
           [this.valueName]: this._currentValue.value
@@ -179,9 +179,9 @@ export class AutoCompleteEditor implements Editor {
     }
 
     // when it's a complex object, then pull the object name only, e.g.: "user.firstName" => "user"
-    const fieldNameFromComplexObject = fieldName.indexOf('.') ? fieldName.substring(0, fieldName.indexOf('.')) : '';
+    const fieldNameFromComplexObject = fieldName!.indexOf('.') ? fieldName!.substring(0, fieldName!.indexOf('.')) : '';
     const validation = this.validate(newValue);
-    item[fieldNameFromComplexObject || fieldName] = (validation && validation.valid) ? newValue : '';
+    item[fieldNameFromComplexObject! || fieldName!] = (validation && validation.valid) ? newValue : '';
   }
 
   isValueChanged(): boolean {

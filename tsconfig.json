@@ -10,6 +10,8 @@
     "allowJs": true,
     "baseUrl": "src",
     "skipLibCheck": true,
+    "strict": false,
+    "strictNullChecks": false,
     "lib": [
       "es2017",
       "dom"

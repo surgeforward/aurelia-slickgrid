@@ -3,6 +3,7 @@ import { objectStringSorter } from './objectStringSorter';
 import { stringSorter } from './stringSorter';
 import { getAssociatedDateSorter } from './dateUtilities';
 import { FieldType } from '../models/index';
+import { naturalStringSorter } from './naturalStringSorter';
 
 export const Sorters = {
   /** Sorter method to sort values by Date object type (uses Moment.js ISO_8601 standard format, optionally include time) */
@@ -85,6 +86,9 @@ export const Sorters = {
 
   /** Sorter method to sort values by Date formatted as (M/D/YY h:m:s A) */
   dateTimeUsShortAM_PM: getAssociatedDateSorter(FieldType.dateTimeUsShortAM_PM),
+
+  /** Sorter method to sort values as natural strings */
+  naturalString: naturalStringSorter,
 
   /** Sorter method to sort values as numeric fields */
   numeric: numericSorter,

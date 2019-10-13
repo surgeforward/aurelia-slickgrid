@@ -5,6 +5,9 @@ export enum FieldType {
   integer,
   float,
 
+  /** strings that will be sorted with natural sort algorithm */
+  naturalString,
+
   /** number includes Integer and Float */
   number,
 
